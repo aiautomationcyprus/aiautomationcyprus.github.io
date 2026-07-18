@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Automation Cyprus — AI &amp; Business Automations</title>
+  <meta name="description" content="AI automations and business process automation services in Cyprus. We help businesses save time, reduce costs, and grow with smart automation." />
+  <meta name="keywords" content="automation cyprus, AI automation cyprus, business automation, workflow automation, AI chatbot cyprus, process automation nicosia limassol" />
+  <link rel="canonical" href="https://automationcyprus.github.io/" />
+  <meta property="og:title" content="Automation Cyprus — AI &amp; Business Automations" />
+  <meta property="og:description" content="AI automations and business process automation services in Cyprus." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --bg: #f8fafc;
+      --navy: #0a0f1e;
+      --teal: #0d9488;
+      --teal-light: #14b8a6;
+      --teal-dim: rgba(13,148,136,0.12);
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --white: #ffffff;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(248,250,252,0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      height: 60px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .nav-logo-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--navy);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-logo-text {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+    }
+
+    .nav-logo-text span { color: var(--teal); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+
+    .nav-links a:hover { color: var(--text); background: var(--border); }
+
+    .nav-cta {
+      background: var(--navy) !important;
+      color: var(--white) !important;
+      font-weight: 600 !important;
+    }
+
+    .nav-cta:hover { background: #1e293b !important; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 80px 2rem 60px;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% -10%, rgba(13,148,136,0.2) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 90% 90%, rgba(13,148,136,0.08) 0%, transparent 50%);
+    }
+
+    /* Dot grid */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      width: 100%;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(13,148,136,0.15);
+      border: 1px solid rgba(13,148,136,0.3);
+      border-radius: 50px;
+      padding: 6px 16px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #5eead4;
+      margin-bottom: 1.8rem;
+    }
+
+    .hero-badge-dot {
+      width: 6px;
+      height: 6px;
+      background: #14b8a6;
+      border-radius: 50%;
+      animation: blink 2s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .hero h1 {
+      font-size: clamp(2.6rem, 6vw, 4.4rem);
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      color: #fff;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero h1 .accent { color: #14b8a6; }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.55);
+      max-width: 560px;
+      margin: 0 auto 2.4rem;
+      line-height: 1.75;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 4rem;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: var(--teal);
+      color: #fff;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(13,148,136,0.4);
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary:hover { background: #0f766e; transform: translateY(-1px); box-shadow: 0 6px 28px rgba(13,148,136,0.5); }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border: 1.5px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.8);
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-outline:hover { border-color: rgba(255,255,255,0.4); color: #fff; }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .stat-num {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.03em;
+    }
+
+    .stat-num span { color: #14b8a6; }
+    .stat-label { font-size: 0.72rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 2px; }
+
+    /* ── SHARED ── */
+    section { padding: 5rem 2rem; }
+
+    .section-inner { max-width: 1080px; margin: 0 auto; }
+
+    .section-header { text-align: center; margin-bottom: 3.5rem; }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.8rem;
+    }
+
+    h2 {
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--navy);
+      margin-bottom: 0.9rem;
+      line-height: 1.15;
+    }
+
+    .section-divider {
+      width: 32px;
+      height: 3px;
+      background: var(--teal);
+      border-radius: 2px;
+      margin: 0 auto 1.1rem;
+    }
+
+    .section-desc {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.75;
+    }
+
+    /* ── WHY AUTOMATE ── */
+    .why { background: #fff; }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .why-card {
+      padding: 2rem 1.6rem;
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: 18px;
+      transition: all 0.2s ease;
+    }
+
+    .why-card:hover {
+      border-color: var(--teal-light);
+      box-shadow: 0 8px 28px rgba(13,148,136,0.1);
+      transform: translateY(-3px);
+    }
+
+    .why-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--teal-dim);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.1rem;
+    }
+
+    .why-card h3 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+    .why-card p { font-size: 0.875rem; color: var(--muted); line-height: 1.65; }
+
+    /* ── SERVICES ── */
+    .services { background: var(--bg); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+
+    .service-card {
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+      padding: 1.6rem;
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      transition: all 0.2s ease;
+    }
+
+    .service-card:hover {
+      border-color: var(--teal-light);
+      box-shadow: 0 6px 24px rgba(13,148,136,0.08);
+    }
+
+    .service-num {
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      background: var(--navy);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: #14b8a6;
+    }
+
+    .service-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 0.4rem; }
+    .service-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+    /* ── HOW IT WORKS ── */
+    .process { background: var(--navy); }
+    .process .section-tag { color: #5eead4; }
+    .process h2 { color: #fff; }
+    .process .section-divider { background: var(--teal); }
+    .process .section-desc { color: rgba(255,255,255,0.5); }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .step {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      transition: all 0.2s ease;
+    }
+
+    .step:hover { background: rgba(13,148,136,0.08); border-color: rgba(13,148,136,0.25); }
+
+    .step-num {
+      width: 52px;
+      height: 52px;
+      background: var(--teal);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #fff;
+      margin: 0 auto 1.2rem;
+    }
+
+    .step h3 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 0.6rem; }
+    .step p { font-size: 0.875rem; color: rgba(255,255,255,0.5); line-height: 1.65; }
+
+    /* ── INDUSTRIES ── */
+    .industries { background: #fff; }
+
+    .industry-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .industry-chip {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text);
+      transition: all 0.2s ease;
+    }
+
+    .industry-chip:hover {
+      border-color: var(--teal);
+      background: var(--teal-dim);
+      color: var(--teal);
+    }
+
+    .chip-dot { width: 7px; height: 7px; background: var(--teal); border-radius: 50%; }
+
+    /* ── CONTACT ── */
+    .contact { background: var(--bg); }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      max-width: 900px;
+      margin: 0 auto;
+      align-items: start;
+    }
+
+    .contact-info h2 { text-align: left; }
+    .contact-info .section-divider { margin-left: 0; }
+    .contact-info p { color: var(--muted); line-height: 1.75; margin-bottom: 1.5rem; }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 1rem;
+    }
+
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--teal);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-detail strong { display: block; font-size: 0.78rem; color: var(--muted); margin-bottom: 1px; }
+    .contact-detail a, .contact-detail span { font-size: 0.9rem; font-weight: 600; color: var(--navy); text-decoration: none; }
+    .contact-detail a:hover { color: var(--teal); }
+
+    .contact-form {
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.05);
+    }
+
+    .form-group { margin-bottom: 1rem; }
+
+    .form-group label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+      letter-spacing: 0.02em;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-family: inherit;
+      background: var(--bg);
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(13,148,136,0.1);
+    }
+
+    .form-group textarea { height: 100px; resize: vertical; }
+    .form-submit { margin-top: 0.5rem; }
+    .form-submit .btn-primary { width: 100%; justify-content: center; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.3);
+    }
+
+    footer a { color: rgba(255,255,255,0.45); text-decoration: underline; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      .why-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+      .services-grid { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+      .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .nav-links { display: none; }
+    }
+
+    @media (max-width: 560px) {
+      .hero-stats { gap: 1.5rem; }
+      .hero h1 { font-size: 2.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">
+      <div class="nav-logo-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#14b8a6" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+          <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"/>
+        </svg>
+      </div>
+      <span class="nav-logo-text">Automation<span>Cyprus</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#why">Why Automate</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">How It Works</a></li>
+      <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        AI &amp; Business Automations — Cyprus
+      </div>
+      <h1>Stop Doing It<br/>Manually. <span class="accent">Automate It.</span></h1>
+      <p class="hero-sub">
+        We build AI-powered automations that eliminate repetitive tasks, speed up your operations, and free your team to focus on what actually matters.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Get a Free Consultation</a>
+        <a href="#services" class="btn-outline">See What We Automate</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">80<span>%</span></div>
+          <div class="stat-label">Time Saved on Average</div>
+        </div>
+        <div>
+          <div class="stat-num">48<span>h</span></div>
+          <div class="stat-label">First Automation Live</div>
+        </div>
+        <div>
+          <div class="stat-num">0<span>€</span></div>
+          <div class="stat-label">Consultation Fee</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY AUTOMATE -->
+  <section class="why" id="why">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-tag">Why Automate</span>
+        <h2>Your Business Is Losing Time Every Day</h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">Manual processes are slow, error-prone, and expensive. Automation fixes all three — often within days, not months.</p>
+      </div>
+      <div class="why-grid">
+
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="9" stroke="#0d9488" stroke-width="2"/>
+              <path d="M12 7 L12 12 L16 14" stroke="#0d9488" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Save Hours Every Week</h3>
+          <p>Repetitive tasks like data entry, follow-up emails, report generation, and scheduling can be fully automated — running 24/7 without your input.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2 L15 8 L22 9 L17 14 L18.5 21 L12 18 L5.5 21 L7 14 L2 9 L9 8 Z" fill="#0d9488" opacity="0.8"/>
+            </svg>
+          </div>
+          <h3>Eliminate Human Error</h3>
+          <p>Automated workflows run exactly the same way every single time. No missed steps, no copy-paste mistakes, no forgotten follow-ups.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M3 3 L3 21 L21 21" stroke="#0d9488" stroke-width="2" stroke-linecap="round"/>
+              <path d="M7 16 L11 10 L15 13 L19 7" stroke="#0d9488" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Scale Without Hiring</h3>
+          <p>Handle 10x the workload with the same team. Automations grow with your business — no extra headcount, no extra cost.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-tag">What We Build</span>
+        <h2>AI Automation Services</h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">From simple workflow automations to complex AI systems — we design, build, and deploy the right solution for your business.</p>
+      </div>
+      <div class="services-grid">
+
+        <div class="service-card">
+          <div class="service-num">01</div>
+          <div>
+            <h3>Workflow &amp; Process Automation</h3>
+            <p>Connect your existing tools — CRM, email, spreadsheets, forms — and automate the flow between them. Built with Make, Zapier, or custom code.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-num">02</div>
+          <div>
+            <h3>AI Chatbots &amp; Virtual Assistants</h3>
+            <p>Custom AI chatbots trained on your business data. Answer customer questions, qualify leads, and book appointments — automatically, 24/7.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-num">03</div>
+          <div>
+            <h3>Lead Generation &amp; Follow-Up</h3>
+            <p>Automate your entire lead pipeline — from capture and enrichment to personalised follow-up sequences and CRM updates. Never lose a lead again.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-num">04</div>
+          <div>
+            <h3>Document &amp; Data Processing</h3>
+            <p>Extract data from invoices, forms, and emails using AI. Automatically organise, validate, and push data where it needs to go — zero manual input.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-num">05</div>
+          <div>
+            <h3>Reporting &amp; Dashboards</h3>
+            <p>Automated daily, weekly, or monthly reports delivered straight to your inbox or Slack. Always know what's happening in your business.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-num">06</div>
+          <div>
+            <h3>E-Commerce &amp; Booking Automation</h3>
+            <p>Order processing, inventory alerts, customer notifications, appointment reminders — automate the operational backbone of your online business.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="process" id="process">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-tag">Our Process</span>
+        <h2>From First Call to Live Automation</h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">We keep it simple. No lengthy projects, no complex contracts — just fast, effective automations that work.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Free Discovery Call</h3>
+          <p>We learn about your business, your biggest time drains, and where automation would have the most impact. No commitment, no jargon.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>We Build It</h3>
+          <p>Our team designs and builds your automation — typically within 48–72 hours for standard workflows, slightly longer for AI-powered systems.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>You Save Time</h3>
+          <p>Your automation goes live. We test everything, train your team, and stay available for adjustments. You focus on growing your business.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES -->
+  <section class="industries" id="industries">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-tag">Industries</span>
+        <h2>We Work Across All Sectors</h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">If your business has repetitive processes, we can automate them. Here are the sectors we work with most in Cyprus.</p>
+      </div>
+      <div class="industry-list">
+        <div class="industry-chip"><span class="chip-dot"></span>Real Estate</div>
+        <div class="industry-chip"><span class="chip-dot"></span>Legal &amp; Accounting</div>
+        <div class="industry-chip"><span class="chip-dot"></span>Hospitality &amp; Tourism</div>
+        <div class="industry-chip"><span class="chip-dot"></span>E-Commerce</div>
+        <div class="industry-chip"><span class="chip-dot"></span>Healthcare &amp; Clinics</div>
+        <div class="industry-chip"><span class="chip-dot"></span>Construction</div>
+        <div class="industry-chip"><span class="chip-dot"></span>Retail</div>
+        <div class="industry-chip"><span class="chip-dot"></span>Financial Services</div>
+        <div class="industry-chip"><span class="chip-dot"></span>Marketing Agencies</div>
+        <div class="industry-chip"><span class="chip-dot"></span>Education</div>
+        <div class="industry-chip"><span class="chip-dot"></span>Logistics</div>
+        <div class="industry-chip"><span class="chip-dot"></span>Restaurants &amp; Food</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <div class="contact-info">
+        <span class="section-tag">Get In Touch</span>
+        <h2>Let's Automate Your Business</h2>
+        <div class="section-divider"></div>
+        <p>Tell us what you're spending too much time on. We'll map out a practical automation plan — free, no commitment, no sales pressure.</p>
+
+        <div class="contact-detail">
+          <div class="contact-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
+              <rect x="3" y="5" width="18" height="14" rx="2" stroke="white" stroke-width="2"/>
+              <path d="M3 7 L12 13 L21 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <strong>Email</strong>
+            <a href="mailto:hello@automationcyprus.com">hello@automationcyprus.com</a>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="rgba(255,255,255,0.85)"/>
+              <circle cx="12" cy="9" r="2.5" fill="#0d9488"/>
+            </svg>
+          </div>
+          <div>
+            <strong>Based In</strong>
+            <span>Cyprus — Serving businesses island-wide</span>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form" name="contact" netlify>
+        <input type="hidden" name="form-name" value="contact" />
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="you@company.com" required />
+        </div>
+        <div class="form-group">
+          <label for="business">Type of Business</label>
+          <input type="text" id="business" name="business" placeholder="e.g. Real estate agency, restaurant..." />
+        </div>
+        <div class="form-group">
+          <label for="message">What do you want to automate?</label>
+          <textarea id="message" name="message" placeholder="Describe the tasks or processes taking up most of your time..."></textarea>
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="btn-primary">Send Message &rarr;</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 <strong style="color:rgba(255,255,255,0.55)">Automation Cyprus</strong>. AI &amp; Business Automations across Cyprus.</p>
+  </footer>
+
+</body>
+</html>
