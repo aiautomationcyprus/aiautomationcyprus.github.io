@@ -385,37 +385,35 @@
     .process .section-desc { color: rgba(255,255,255,0.5); }
 
     .steps {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      display: flex;
+      flex-direction: column;
       gap: 2rem;
+      max-width: 620px;
+      margin: 0 auto;
     }
 
     .step {
-      text-align: center;
-      padding: 2rem 1.5rem;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 20px;
-      transition: all 0.2s ease;
+      display: flex;
+      align-items: flex-start;
+      gap: 1.4rem;
     }
 
-    .step:hover { background: rgba(13,148,136,0.08); border-color: rgba(13,148,136,0.25); }
-
     .step-num {
-      width: 52px;
-      height: 52px;
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
       background: var(--teal);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.1rem;
+      font-size: 0.95rem;
       font-weight: 800;
       color: #fff;
-      margin: 0 auto 1.2rem;
+      margin-top: 2px;
     }
 
-    .step h3 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 0.6rem; }
+    .step h3 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 0.4rem; }
     .step p { font-size: 0.875rem; color: rgba(255,255,255,0.5); line-height: 1.65; }
 
     /* ── INDUSTRIES ── */
@@ -454,16 +452,15 @@
     .contact { background: var(--bg); }
 
     .contact-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      max-width: 900px;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      max-width: 620px;
       margin: 0 auto;
-      align-items: start;
     }
 
-    .contact-info h2 { text-align: left; }
-    .contact-info .section-divider { margin-left: 0; }
+    .contact-info h2 { text-align: center; }
+    .contact-info .section-divider { margin: 0 auto 1.1rem; }
     .contact-info p { color: var(--muted); line-height: 1.75; margin-bottom: 1.5rem; }
 
     .contact-detail {
@@ -548,8 +545,6 @@
     @media (max-width: 860px) {
       .why-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
       .services-grid { grid-template-columns: 1fr; }
-      .steps { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
-      .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
       .nav-links { display: none; }
     }
 
