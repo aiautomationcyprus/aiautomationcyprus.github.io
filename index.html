@@ -330,7 +330,12 @@
     .why-card h3 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
     .why-card p { font-size: 0.875rem; color: var(--muted); line-height: 1.65; }
 
-    /* ── SERVICES ── */
+    /* ── WHY LIST ── */
+.why-list { max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem; }
+.why-item h3 { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 0.4rem; }
+.why-item p { font-size: 0.95rem; color: var(--muted); line-height: 1.75; }
+
+/* ── SERVICES ── */
     .services { background: var(--bg); }
 
     .services-grid {
@@ -617,40 +622,19 @@
         <div class="section-divider"></div>
         <p class="section-desc">Manual processes are slow, error-prone, and expensive. Automation fixes all three — often within days, not months.</p>
       </div>
-      <div class="why-grid">
-
-        <div class="why-card">
-          <div class="why-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-              <circle cx="12" cy="12" r="9" stroke="#0d9488" stroke-width="2"/>
-              <path d="M12 7 L12 12 L16 14" stroke="#0d9488" stroke-width="2.5" stroke-linecap="round"/>
-            </svg>
-          </div>
+      <div class="why-list">
+        <div class="why-item">
           <h3>Save Hours Every Week</h3>
           <p>Repetitive tasks like data entry, follow-up emails, report generation, and scheduling can be fully automated — running 24/7 without your input.</p>
         </div>
-
-        <div class="why-card">
-          <div class="why-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-              <path d="M12 2 L15 8 L22 9 L17 14 L18.5 21 L12 18 L5.5 21 L7 14 L2 9 L9 8 Z" fill="#0d9488" opacity="0.8"/>
-            </svg>
-          </div>
+        <div class="why-item">
           <h3>Eliminate Human Error</h3>
           <p>Automated workflows run exactly the same way every single time. No missed steps, no copy-paste mistakes, no forgotten follow-ups.</p>
         </div>
-
-        <div class="why-card">
-          <div class="why-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-              <path d="M3 3 L3 21 L21 21" stroke="#0d9488" stroke-width="2" stroke-linecap="round"/>
-              <path d="M7 16 L11 10 L15 13 L19 7" stroke="#0d9488" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
+        <div class="why-item">
           <h3>Scale Without Hiring</h3>
           <p>Handle 10x the workload with the same team. Automations grow with your business — no extra headcount, no extra cost.</p>
         </div>
-
       </div>
     </div>
   </section>
