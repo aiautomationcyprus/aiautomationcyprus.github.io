@@ -1,0 +1,55 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+}
+
+const { title, description = 'AI automations and business process automation services in Cyprus. We help businesses save time, reduce costs, and grow with smart automation.', canonical } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  {canonical && <link rel="canonical" href={canonical} />}
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">
+      <div class="nav-logo-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#14b8a6" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+          <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"/>
+        </svg>
+      </div>
+      <span class="nav-logo-text">ai automation <span>cyprus</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#why">Why Automate</a></li>
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#process">How It Works</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/#contact" class="nav-cta">Get in Touch</a></li>
+    </ul>
+  </nav>
+
+  <slot />
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 <strong style="color:rgba(255,255,255,0.55)">AI Automation Cyprus</strong>. AI &amp; Business Automations across Cyprus.</p>
+  </footer>
+
+</body>
+</html>

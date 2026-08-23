@@ -1,0 +1,41 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
+);
+---
+<BaseLayout
+  title="Blog | AI Automation Cyprus"
+  description="Practical guides, industry insights, and automation tips from the AI Automation Cyprus team."
+  canonical="https://aiautomationcyprus.github.io/blog/"
+>
+
+  <div class="blog-hero">
+    <div class="blog-hero-inner">
+      <span class="section-tag" style="color:#5eead4;">Insights &amp; Guides</span>
+      <h1>AI Automation Blog</h1>
+      <p>Practical automation tips, industry insights, and real-world examples from businesses across Cyprus.</p>
+    </div>
+  </div>
+
+  <div class="blog-grid-section">
+    <div class="blog-grid">
+      {posts.map((post) => (
+        <a href={`/${post.slug}/`} class="blog-card">
+          <div class="blog-card-body">
+            <div class="blog-card-category">{post.data.category}</div>
+            <h2>{post.data.title}</h2>
+            <p>{post.data.description}</p>
+            <div class="blog-card-meta">
+              <span>{post.data.date}</span>
+              <span>{post.data.readTime}</span>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+
+</BaseLayout>
