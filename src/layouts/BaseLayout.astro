@@ -5,9 +5,10 @@ interface Props {
   title: string;
   description?: string;
   canonical?: string;
+  robots?: string;
 }
 
-const { title, description = 'AI automations and business process automation services in Cyprus. We help businesses save time, reduce costs, and grow with smart automation.', canonical } = Astro.props;
+const { title, description = 'AI automations and business process automation services in Cyprus. We help businesses save time, reduce costs, and grow with smart automation.', canonical, robots } = Astro.props;
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -17,6 +18,7 @@ const { title, description = 'AI automations and business process automation ser
   <title>{title}</title>
   <meta name="description" content={description} />
   {canonical && <link rel="canonical" href={canonical} />}
+  {robots && <meta name="robots" content={robots} />}
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
