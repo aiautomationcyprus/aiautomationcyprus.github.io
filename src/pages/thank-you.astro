@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Thank You | AI Automation Cyprus"
+  description="Thanks for reaching out. We'll be in touch shortly."
+>
+
+  <section class="thankyou">
+    <div class="thankyou-inner">
+      <div class="thankyou-icon">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="11" stroke="#14b8a6" stroke-width="1.5"/>
+          <path d="M7 12.5l3.5 3.5 6.5-7" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h1>Message Received</h1>
+      <p>Thanks for getting in touch. We'll review your message and get back to you within one business day.</p>
+      <a href="/" class="btn-primary">Back to Home</a>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .thankyou {
+    min-height: calc(100vh - 140px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 1.5rem;
+  }
+
+  .thankyou-inner {
+    text-align: center;
+    max-width: 480px;
+  }
+
+  .thankyou-icon {
+    margin-bottom: 1.5rem;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: rgba(255,255,255,0.6);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+</style>
