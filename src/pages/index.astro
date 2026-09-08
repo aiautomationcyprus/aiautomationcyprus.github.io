@@ -1,11 +1,30 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { homepage as h } from '../data/homepage';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "AI Automation Cyprus",
+  "url": "https://ai-cyp.com",
+  "logo": "https://ai-cyp.com/og-image.png",
+  "description": "AI automations and business process automation services in Cyprus. We help businesses save time, reduce costs, and grow with smart automation.",
+  "email": "hello@automationcyprus.com",
+  "areaServed": [
+    "Nicosia", "Limassol", "Larnaca", "Paphos", "Famagusta", "Protaras", "Ayia Napa", "Cyprus"
+  ],
+  "serviceType": [
+    "Workflow Automation", "AI Chatbots", "Lead Generation Automation",
+    "Document Processing", "Reporting Automation", "E-Commerce Automation"
+  ],
+  "sameAs": []
+});
 ---
 <BaseLayout
   title="AI Automation Cyprus | AI &amp; Business Automations"
   description="AI automations and business process automation services in Cyprus. We help businesses save time, reduce costs, and grow with smart automation."
-  canonical="https://aiautomationcyprus.github.io/"
+  canonical="https://ai-cyp.com/"
+  schema={schema}
 >
 
   <!-- HERO -->
