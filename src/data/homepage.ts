@@ -17,7 +17,7 @@ export const homepage = {
   why: {
     tag: "Why Automate",
     heading: "Your Business Is Losing Time Every Day",
-    desc: "Manual processes are slow, error-prone, and expensive. Automation fixes all three, often within days, not months.",
+    desc: "Manual processes are slow, error-prone, and expensive. Automation fixes all three, often within days, not months. You save money and you can focus on the work that is important.",
     items: [
       {
         heading: "Save Hours Every Week",
@@ -29,7 +29,7 @@ export const homepage = {
       },
       {
         heading: "Scale Without Hiring",
-        body: "Handle 10x the workload with the same team. Automations grow with your business. No extra headcount, no extra cost.",
+        body: "Handle 10x the workload with the same team. You don't need another worker for your Cyprus staff. Automations grow with your business. No extra headcount, no extra cost.",
       },
     ],
   },
