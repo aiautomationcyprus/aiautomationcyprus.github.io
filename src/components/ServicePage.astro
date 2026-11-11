@@ -1,0 +1,143 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { contactBasics, type ServicePageData } from '../data/servicePages';
+
+interface Props { page: ServicePageData }
+const { page: p } = Astro.props;
+const url = `https://ai-cyp.com/${p.slug}/`;
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": p.schemaName,
+  "url": url,
+  "logo": "https://ai-cyp.com/og-image.png",
+  "description": p.metaDescription,
+  "email": contactBasics.email,
+  "telephone": contactBasics.phone,
+  "areaServed": p.areaServed,
+  "serviceType": p.serviceType,
+  "provider": { "@type": "Organization", "name": "AI Automation Cyprus", "url": "https://ai-cyp.com" }
+});
+---
+<BaseLayout title={p.seoTitle} description={p.metaDescription} canonical={url} schema={schema} footer={p.footer}>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-badge">{p.hero.badge}</p>
+      <h1>{p.hero.heading}<br/> <span class="accent">{p.hero.headingAccent}</span></h1>
+      <p class="hero-sub">{p.hero.sub}</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">{p.hero.ctaPrimary}</a>
+        <a href="#services" class="btn-outline">{p.hero.ctaSecondary}</a>
+      </div>
+      <div class="hero-stats">
+        {p.hero.stats.map(s => (
+          <div>
+            <div class="stat-num">{s.num}<span>{s.unit}</span></div>
+            <div class="stat-label">{s.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="why" id="why">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-tag">{p.why.tag}</span>
+        <h2>{p.why.heading}</h2>
+        <p class="section-desc">{p.why.desc}</p>
+      </div>
+      <div class="why-list">
+        {p.why.items.map(item => (
+          <div class="why-item"><h3>{item.heading}</h3><p>{item.body}</p></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-tag">{p.services.tag}</span>
+        <h2>{p.services.heading}</h2>
+        <p class="section-desc">{p.services.desc}</p>
+      </div>
+      <div class="services-grid">
+        {p.services.items.map(item => (
+          <div class="service-card">
+            <div class="service-num">{item.num}</div>
+            <h3>{item.heading}</h3>
+            <p>{item.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="process" id="process">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-tag">{p.process.tag}</span>
+        <h2>{p.process.heading}</h2>
+        {p.process.desc && <p class="section-desc">{p.process.desc}</p>}
+      </div>
+      <div class="steps">
+        {p.process.steps.map(step => (
+          <div class="step">
+            <div class="step-num">{step.num}</div>
+            <h3>{step.heading}</h3>
+            <p>{step.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="industries" id="industries">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-tag">{p.audience.tag}</span>
+        <h2>{p.audience.heading}</h2>
+        {p.audience.desc && <p class="section-desc">{p.audience.desc}</p>}
+      </div>
+      <ul class="industry-list">
+        {p.audience.list.map(name => <li>{name}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <div class="contact-info">
+        <span class="section-tag">{p.contact.tag}</span>
+        <h2>{p.contact.heading}</h2>
+        <p>{p.contact.body}</p>
+        <dl class="contact-details">
+          <div><dt>Email</dt><dd><a href={`mailto:${contactBasics.email}`}>{contactBasics.email}</a></dd></div>
+          <div><dt>Phone / WhatsApp</dt><dd><a href={`tel:${contactBasics.phoneHref}`}>{contactBasics.phone}</a></dd></div>
+          <div><dt>Serving</dt><dd>{p.contact.location}</dd></div>
+        </dl>
+      </div>
+
+      <form class="contact-form" action="https://formspree.io/f/xkjwaalr" method="POST">
+        <input type="hidden" name="_next" value="https://ai-cyp.com/thank-you/" />
+        <input type="hidden" name="source_page" value={url} />
+        {p.contact.fields.map(f => (
+          <div class="form-group">
+            <label for={f.name}>{f.label}</label>
+            {f.textarea
+              ? <textarea id={f.name} name={f.name} required={f.required}></textarea>
+              : <input type={f.type ?? 'text'} id={f.name} name={f.name} required={f.required} />}
+          </div>
+        ))}
+        <p class="form-note">By submitting this form, you agree to our Privacy Policy.</p>
+        <div class="form-submit">
+          <button type="submit" class="btn-primary">Send Message &rarr;</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+</BaseLayout>

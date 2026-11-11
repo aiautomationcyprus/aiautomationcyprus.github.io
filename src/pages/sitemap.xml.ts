@@ -4,7 +4,7 @@ export async function GET() {
   const posts = await getCollection('blog');
   const site = 'https://ai-cyp.com';
 
-  const staticPages = ['', '/blog/'];
+  const staticPages = ['', '/ai-agency-cyprus/', '/ai-for-hotels-tourism-cyprus/', '/blog/'];
   const postUrls = posts.map((p) => `/${p.slug}/`);
   const allUrls = [...staticPages, ...postUrls];
 

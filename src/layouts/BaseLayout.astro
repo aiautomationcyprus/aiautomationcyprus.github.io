@@ -7,6 +7,7 @@ interface Props {
   canonical?: string;
   robots?: string;
   schema?: string;
+  footer?: string;
 }
 
 const {
@@ -15,6 +16,7 @@ const {
   canonical,
   robots,
   schema,
+  footer = 'AI & Business Automation across Cyprus. All rights reserved.',
 } = Astro.props;
 
 const siteName = 'AI Automation Cyprus';
@@ -52,28 +54,21 @@ const ogImage = 'https://ai-cyp.com/og-image.png';
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 </head>
 <body>
 
   <!-- NAV -->
   <nav>
     <a href="/" class="nav-logo">
-      <div class="nav-logo-icon">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#14b8a6" stroke-width="2" stroke-linejoin="round"/>
-          <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
-          <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"/>
-        </svg>
-      </div>
-      <span class="nav-logo-text">ai automation <span>cyprus</span></span>
+      <span class="nav-logo-text">AI Automation <span>Cyprus</span></span>
     </a>
     <ul class="nav-links">
-      <li><a href="/#why">Why Automate</a></li>
-      <li><a href="/#services">Services</a></li>
-      <li><a href="/#process">How It Works</a></li>
+      <li><a href="/ai-agency-cyprus/">AI Agency</a></li>
+      <li><a href="/ai-for-hotels-tourism-cyprus/">AI for Hotels &amp; Tourism</a></li>
       <li><a href="/blog/">Blog</a></li>
-      <li><a href="/#contact" class="nav-cta">Get in Touch</a></li>
+      <li><a href="/#contact">Contact</a></li>
+      <li><a href="tel:+35797603083" class="nav-cta">+357 97 603083</a></li>
     </ul>
   </nav>
 
@@ -81,7 +76,7 @@ const ogImage = 'https://ai-cyp.com/og-image.png';
 
   <!-- FOOTER -->
   <footer>
-    <p>&copy; 2026 <strong style="color:rgba(255,255,255,0.55)">AI Automation Cyprus</strong>. AI &amp; Business Automations across Cyprus.</p>
+    <p>&copy; 2026 AI Automation Cyprus. {footer}</p>
   </footer>
 
 </body>

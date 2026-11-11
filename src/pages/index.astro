@@ -30,10 +30,7 @@ const schema = JSON.stringify({
   <!-- HERO -->
   <section class="hero">
     <div class="hero-inner">
-      <div class="hero-badge">
-        <span class="hero-badge-dot"></span>
-        {h.hero.badge}
-      </div>
+      <p class="hero-badge">{h.hero.badge}</p>
       <h1>{h.hero.heading}<br/> <span class="accent">{h.hero.headingAccent}</span></h1>
       <p class="hero-sub">{h.hero.sub}</p>
       <div class="hero-actions">
@@ -57,8 +54,7 @@ const schema = JSON.stringify({
       <div class="section-header">
         <span class="section-tag">{h.why.tag}</span>
         <h2>{h.why.heading}</h2>
-        <div class="section-divider"></div>
-        <p class="section-desc">{h.why.desc}</p>
+                <p class="section-desc">{h.why.desc}</p>
       </div>
       <div class="why-list">
         {h.why.items.map(item => (
@@ -77,17 +73,14 @@ const schema = JSON.stringify({
       <div class="section-header">
         <span class="section-tag">{h.services.tag}</span>
         <h2>{h.services.heading}</h2>
-        <div class="section-divider"></div>
-        <p class="section-desc">{h.services.desc}</p>
+                <p class="section-desc">{h.services.desc}</p>
       </div>
       <div class="services-grid">
         {h.services.items.map(item => (
           <div class="service-card">
             <div class="service-num">{item.num}</div>
-            <div>
-              <h3>{item.heading}</h3>
-              <p>{item.body}</p>
-            </div>
+            <h3>{item.heading}</h3>
+            <p>{item.body}</p>
           </div>
         ))}
       </div>
@@ -100,8 +93,7 @@ const schema = JSON.stringify({
       <div class="section-header">
         <span class="section-tag">{h.process.tag}</span>
         <h2>{h.process.heading}</h2>
-        <div class="section-divider"></div>
-        <p class="section-desc">{h.process.desc}</p>
+                <p class="section-desc">{h.process.desc}</p>
       </div>
       <div class="steps">
         {h.process.steps.map(step => (
@@ -121,14 +113,13 @@ const schema = JSON.stringify({
       <div class="section-header">
         <span class="section-tag">{h.industries.tag}</span>
         <h2>{h.industries.heading}</h2>
-        <div class="section-divider"></div>
-        <p class="section-desc">{h.industries.desc}</p>
+                <p class="section-desc">{h.industries.desc}</p>
       </div>
-      <div class="industry-list">
+      <ul class="industry-list">
         {h.industries.list.map(name => (
-          <div class="industry-chip"><span class="chip-dot"></span>{name}</div>
+          <li>{name}</li>
         ))}
-      </div>
+      </ul>
     </div>
   </section>
 
@@ -138,38 +129,26 @@ const schema = JSON.stringify({
       <div class="contact-info">
         <span class="section-tag">{h.contact.tag}</span>
         <h2>{h.contact.heading}</h2>
-        <div class="section-divider"></div>
-        <p>{h.contact.body}</p>
+                <p>{h.contact.body}</p>
 
-        <div class="contact-detail">
-          <div class="contact-icon">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
-              <rect x="3" y="5" width="18" height="14" rx="2" stroke="white" stroke-width="2"/>
-              <path d="M3 7 L12 13 L21 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
-            </svg>
+        <dl class="contact-details">
+          <div>
+            <dt>Email</dt>
+            <dd><a href={`mailto:${h.contact.email}`}>{h.contact.email}</a></dd>
           </div>
           <div>
-            <strong>Email</strong>
-            <a href={`mailto:${h.contact.email}`}>{h.contact.email}</a>
-          </div>
-        </div>
-
-        <div class="contact-detail">
-          <div class="contact-icon">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
-              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="rgba(255,255,255,0.85)"/>
-              <circle cx="12" cy="9" r="2.5" fill="#0d9488"/>
-            </svg>
+            <dt>Phone / WhatsApp</dt>
+            <dd><a href={`tel:${h.contact.phoneHref}`}>{h.contact.phone}</a></dd>
           </div>
           <div>
-            <strong>Based In</strong>
-            <span>{h.contact.location}</span>
+            <dt>Serving</dt>
+            <dd>{h.contact.location}</dd>
           </div>
-        </div>
+        </dl>
       </div>
 
       <form class="contact-form" action="https://formspree.io/f/xkjwaalr" method="POST">
-        <input type="hidden" name="_next" value="https://aiautomationcyprus.github.io/thank-you/" />
+        <input type="hidden" name="_next" value="https://ai-cyp.com/thank-you/" />
         <div class="form-group">
           <label for="name">{h.contact.formFields.name.label}</label>
           <input type="text" id="name" name="name" placeholder={h.contact.formFields.name.placeholder} required />
@@ -186,6 +165,7 @@ const schema = JSON.stringify({
           <label for="message">{h.contact.formFields.message.label}</label>
           <textarea id="message" name="message" placeholder={h.contact.formFields.message.placeholder}></textarea>
         </div>
+        <p class="form-note">{h.contact.formFields.note}</p>
         <div class="form-submit">
           <button type="submit" class="btn-primary">{h.contact.formFields.submit} &rarr;</button>
         </div>
