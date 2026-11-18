@@ -2,23 +2,35 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { homepage as h } from '../data/homepage';
 
-const schema = JSON.stringify({
+const business = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "AI Automation Cyprus",
   "url": "https://ai-cyp.com",
   "logo": "https://ai-cyp.com/og-image.png",
   "description": "AI automations and business process automation services in Cyprus. We help businesses save time, reduce costs, and grow with smart automation.",
-  "email": "hello@automationcyprus.com",
+  "email": h.contact.email,
+  "telephone": h.contact.phoneHref,
   "areaServed": [
     "Nicosia", "Limassol", "Larnaca", "Paphos", "Famagusta", "Protaras", "Ayia Napa", "Cyprus"
   ],
   "serviceType": [
-    "Workflow Automation", "AI Chatbots", "Lead Generation Automation",
-    "Document Processing", "Reporting Automation", "E-Commerce Automation"
+    "Workflow Automation", "AI Chatbots", "WhatsApp Chatbots", "AI Voice Agents",
+    "Lead Generation Automation", "Document Processing", "Invoice Automation",
+    "AI Agents", "Reporting Automation", "E-Commerce Automation"
   ],
   "sameAs": []
-});
+};
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": h.faq.items.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
+};
+const schema = JSON.stringify([business, faqSchema]);
 ---
 <BaseLayout
   title="AI Automation Cyprus | AI &amp; Business Automations"
@@ -56,7 +68,7 @@ const schema = JSON.stringify({
         <h2>{h.why.heading}</h2>
                 <p class="section-desc">{h.why.desc}</p>
       </div>
-      <div class="why-list">
+      <div class="why-list why-list--2x2">
         {h.why.items.map(item => (
           <div class="why-item">
             <h3>{item.heading}</h3>
@@ -80,9 +92,19 @@ const schema = JSON.stringify({
           <div class="service-card">
             <div class="service-num">{item.num}</div>
             <h3>{item.heading}</h3>
-            <p>{item.body}</p>
+            <p>{item.body}{item.link && <> <a href={item.link.href} class="inline-link">{item.link.label} &rarr;</a></>}</p>
           </div>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNOLOGY -->
+  <section class="technology" id="technology">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>{h.technology.heading}</h2>
+        <p class="section-desc">{h.technology.body}</p>
       </div>
     </div>
   </section>
@@ -115,11 +137,32 @@ const schema = JSON.stringify({
         <h2>{h.industries.heading}</h2>
                 <p class="section-desc">{h.industries.desc}</p>
       </div>
-      <ul class="industry-list">
-        {h.industries.list.map(name => (
-          <li>{name}</li>
+      <dl class="industry-rows">
+        {h.industries.items.map(item => (
+          <div class="industry-row">
+            <dt>{item.name}</dt>
+            <dd>{item.body}{item.link && <> <a href={item.link.href} class="inline-link">{item.link.label} &rarr;</a></>}</dd>
+          </div>
         ))}
-      </ul>
+      </dl>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-tag">{h.faq.tag}</span>
+        <h2>{h.faq.heading}</h2>
+      </div>
+      <div class="faq-list">
+        {h.faq.items.map(f => (
+          <div class="faq-item">
+            <h3>{f.q}</h3>
+            <p>{f.a}</p>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 

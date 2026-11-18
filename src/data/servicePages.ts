@@ -28,7 +28,7 @@ export type ServicePageData = {
   footer: string;
 };
 
-const email = "hello@automationcyprus.com";
+const email = "hello@ai-cyp.com";
 const phone = "+357 97 603083";
 const phoneHref = "+35797603083";
 export const contactBasics = { email, phone, phoneHref };
