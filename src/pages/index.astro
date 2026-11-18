@@ -165,7 +165,7 @@ const schema = JSON.stringify({
           <label for="message">{h.contact.formFields.message.label}</label>
           <textarea id="message" name="message" placeholder={h.contact.formFields.message.placeholder}></textarea>
         </div>
-        <p class="form-note">{h.contact.formFields.note}</p>
+        <p class="form-note">By submitting this form, you agree to our <a href="/privacy-policy/">Privacy Policy</a>.</p>
         <div class="form-submit">
           <button type="submit" class="btn-primary">{h.contact.formFields.submit} &rarr;</button>
         </div>

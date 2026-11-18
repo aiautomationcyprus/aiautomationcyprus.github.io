@@ -316,6 +316,9 @@ footer {
   color: var(--muted);
 }
 
+.form-note a, .footer-link { text-decoration: underline; text-underline-offset: 3px; }
+.form-note a:hover, .footer-link:hover { color: var(--copper); }
+
 /* ── BLOG ── */
 .blog-hero, .post-hero {
   padding: 150px 2rem 3rem;
